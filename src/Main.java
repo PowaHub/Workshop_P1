@@ -14,15 +14,3 @@ public class Main {
         PrositIPC.start();
     }
 }
-
-abstract class Etape1 implements IStep1Strategy {
-
-}
-
-abstract class Etape2 implements IStep2Strategy {
-
-}
-
-abstract class Etape3 implements IStep3Strategy {
-
-}
