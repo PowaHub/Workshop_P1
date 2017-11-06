@@ -19,10 +19,10 @@ abstract class Etape1 implements IStep1Strategy {
 
 }
 
-public class Etape2 implements IStep2Strategy {
+abstract class Etape2 implements IStep2Strategy {
 
 }
 
-public class Etape3 implements IStep3Strategy {
+abstract class Etape3 implements IStep3Strategy {
 
 }
