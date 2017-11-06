@@ -3,10 +3,8 @@ import exia.ipc.entities.*;
 public class Etape1 implements IStep1Strategy
 {
     @Override
-    public Product onMachineRequest(InputDock inputDock, MachineX machineX) throws Exception {
-        if (inputDock.isProductAvailable()) {
-            return machineX.executeWork();
-        }
+    public synchronized Product onMachineRequest(InputDock inputDock, MachineX machineX) throws Exception {
+
         return inputDock.accept();
     }
 }
