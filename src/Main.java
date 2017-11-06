@@ -7,8 +7,8 @@ public class Main {
     public static void main(String[] args){
         // On indique les classes des différents exercices
         PrositIPC.Step1 = new Etape1();
-        //PrositIPC.Step2 = new Etape2();
-        //PrositIPC.Step3 = new Etape3();
+        PrositIPC.Step2 = new Etape2();
+        PrositIPC.Step3 = new Etape3();
 
         //On lance l'application
         PrositIPC.start();
