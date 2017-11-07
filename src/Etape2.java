@@ -5,7 +5,7 @@ import exia.ipc.entities.MachineY;
 import java.util.concurrent.Semaphore;
 
 public class Etape2 implements IStep2Strategy {
-    private final Semaphore available = new Semaphore(2, true);
+    private final Semaphore available = new Semaphore(2);
     @Override
     public void onMachineRequest(MachineX machineX, MachineY machineY) throws Exception {
         available.acquire();
