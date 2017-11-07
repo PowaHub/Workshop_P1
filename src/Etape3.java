@@ -16,20 +16,25 @@ public class Etape3 implements IStep3Strategy{
     @Override
     public MachineZ chooseMachine(MachineZ target1, MachineZ target2) throws Exception
     {
-        if(target1.isMachineAvailable()== true && test==0){
+
+        if(target1.isChainAvailable()== true && test==0){
             test=1;
             return target1;
 
         }
-        else if (target2.isMachineAvailable() && test ==1){
+        else if (target2.isChainAvailable()==true && test ==1){
             test = 0;
             return target2;
         }
-        else
-        {
 
-            return target1;
+
+        while (target1.isChainAvailable()==false && target2.isChainAvailable()==false){
+
         }
+
+
+        return null;
+
     }
     @Override
     public void onMachineRequest(Product product, MachineZ machineZ, MachineZ machineZ1, MachineZ machineZ2) throws Exception {
@@ -37,7 +42,6 @@ public class Etape3 implements IStep3Strategy{
            public void run()
            {
                try {
-                   if(machineZ.isMachineAvailable())
                    machineZ.executeJob(product);
                } catch (MachineAllreadyUsedException e) {
                    e.printStackTrace();
@@ -50,7 +54,6 @@ public class Etape3 implements IStep3Strategy{
             public void run()
             {
                 try {
-                    if(machineZ1.isMachineAvailable())
                         machineZ1.executeJob(product);
                 } catch (MachineAllreadyUsedException e) {
                     e.printStackTrace();
@@ -63,7 +66,6 @@ public class Etape3 implements IStep3Strategy{
             public void run()
             {
                 try {
-                    if(machineZ2.isMachineAvailable())
                     machineZ2.executeJob(product);
 
                 } catch (MachineAllreadyUsedException e) {
